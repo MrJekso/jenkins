@@ -1,3 +1,3 @@
 # Base Image 
-FROM nginx:alpine
+FROM nginx:latest
 EXPOSE 80
