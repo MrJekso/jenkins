@@ -21,6 +21,13 @@ pipeline{
 				sh 'ssh root@agent \'uptime\''
 			}
 		}
-
+		stage('Build docker image'){
+			steps {
+				echo "==================================="
+				dir('toolbox'){
+					sh 'docker build .'
+				}
+			}
+		}
 	}
 }
