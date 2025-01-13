@@ -16,5 +16,11 @@ pipeline{
 				sh 'ssh root@agent \'hostname\''
 			}
 		}
+		stage('Two stage'){
+			steps {
+				sh 'ssh root@agent \'uptime\''
+			}
+		}
+
 	}
 }
