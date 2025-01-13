@@ -1,5 +1,3 @@
-FROM alpine
-RUN apk add --no-cache  curl wget busybox-extras netcat-opends python py-pip
-RUN pip install awscli
-RUN apk --purge -v del py-pip
-CMD tail -f /dev/null
+# Base Image 
+FROM nginx:alpine
+EXPOSE 80
