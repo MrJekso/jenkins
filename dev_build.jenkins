@@ -14,7 +14,9 @@ pipeline{
 	stages {
 		stage('build'){
 			steps {
+				sh 'cd ~'
 				sh 'git clone git@github.com:MrJekso/LyskovoChat.git'
+				sh 'ls -la'
 			}
 		}
 	}
