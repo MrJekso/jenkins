@@ -15,7 +15,7 @@ pipeline{
 		stage('build'){
 			steps {
 				script{
-					if(sh('ls | grep LyskovoChat') == "LyskovoChat"){
+					if(sh('ls | grep LyskovoChat')){
 						sh 'cd LyskovoChat'
 						sh 'git pull origin main'
 					}else{
