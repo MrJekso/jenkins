@@ -17,11 +17,6 @@ pipeline{
 				script{
                   			def output = sh(returnStdout: true, script: 'ls | grep LyskovoChat').trim()
                   			echo "Output: '${output}'"
-					if(output == "LyskovoChat"){
-						echo "i am find"
-					}else{
-						echo "i am not find"
-					}
 				}
 			}
 		}
