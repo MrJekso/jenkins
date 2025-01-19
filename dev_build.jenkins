@@ -15,7 +15,7 @@ pipeline{
 		stage('build'){
 			steps {
 				script{
-					def existsDirectory = sh(returnStatus: true, script: '[[ -d LyskovoChat]]')
+					def existsDirectory = sh(returnStatus: true, script: '[[ -d LyskovoChat]] && echo "ok"')
 					if(existsDirectory){
 						sh 'cd LyskovoChat'
 						sh 'git pull origin main'
