@@ -1,5 +1,4 @@
 #!groovy
-import java.nio.file.Files
 
 properties([disableConcurrentBuilds()])
 
@@ -22,7 +21,8 @@ pipeline{
 						sh('cd LyskovoChat')
 						sh('git pull origin main')
 					}else{
-						sh('git clone git@github.com:MrJekso/LyskovoChat.git')
+						echo "Just do it"
+						sh 'git clone git@github.com:MrJekso/LyskovoChat.git'
 					}
 					//if(Files.exists("LyskovoChat")){
 					//	sh 'cd LyskovoChat'
