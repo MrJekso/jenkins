@@ -15,7 +15,7 @@ pipeline{
 		stage('build'){
 			steps {
 				script{
-					sh 'rm -r LyshokoChat -y'
+					sh 'rm -r LyshokoChat'
 					sh 'git clone git@github.com:MrJekso/LyskovoChat.git'
 				}
 			}
