@@ -16,7 +16,7 @@ pipeline{
 		stage('build'){
 			steps {
 				script{
-					sd = sh('ls')
+					sd = sh('ls | toolbox')
 					print(sd)
 					//if(Files.exists("LyskovoChat")){
 					//	sh 'cd LyskovoChat'
