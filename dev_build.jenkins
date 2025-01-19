@@ -16,10 +16,13 @@ pipeline{
 		stage('build'){
 			steps {
 				script{
-                  			def output = sh(returnStdout: true, script: 'ls | grep toolbox').trim()
+                  			def output = sh(returnStdout: true, script: 'ls | grep LyskovoChat').trim()
                   			echo "Output: '${output}'"
-					if(output == "toolbox"){
-						echo "Hello"
+					if(output == "LyskovoChat"){
+						cd 'LyskovoChat'
+						git 'pull origin main'
+					}else{
+						sh 'git clone git@github.com:MrJekso/LyskovoChat.git'
 					}
 					//if(Files.exists("LyskovoChat")){
 					//	sh 'cd LyskovoChat'
