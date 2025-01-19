@@ -16,7 +16,7 @@ pipeline{
 		stage('build'){
 			steps {
 				script{
-					if(!Files.exists("LyskovoChat")){
+					if(Files.exists("LyskovoChat")){
 						sh 'cd LyskovoChat'
 						sh 'git pull origin main'
 					}else{
