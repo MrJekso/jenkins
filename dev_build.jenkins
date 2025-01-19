@@ -18,7 +18,9 @@ pipeline{
 				script{
                   			def output = sh(returnStdout: true, script: 'ls | grep toolbox').trim()
                   			echo "Output: '${output}'"
-					print(output)
+					if(output == "toolbox"){
+						echo "Hello"
+					}
 					//if(Files.exists("LyskovoChat")){
 					//	sh 'cd LyskovoChat'
 					//	sh 'git pull origin main'
