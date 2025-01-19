@@ -16,10 +16,8 @@ pipeline{
 		stage('build'){
 			steps {
 				script{
-					directory = new File(.)
-					direcory.eachFile{
-						println(it)
-					}
+					sd = sh('ls')
+					print(sd)
 					//if(Files.exists("LyskovoChat")){
 					//	sh 'cd LyskovoChat'
 					//	sh 'git pull origin main'
