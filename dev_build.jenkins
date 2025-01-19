@@ -7,8 +7,9 @@ pipeline{
 		label 'master'
 	}
 	triggers {pollSCM('* * * * *')}
-	oprions {
+	options {
 		buildDiscarder(logRotator(numToKeepStr:'10',artifactNumToKeepStr:'10'))
+		timestamps()
 	}
 	stages {
 		stage('build'){
