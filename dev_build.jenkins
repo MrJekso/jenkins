@@ -1,0 +1,20 @@
+#!groovy
+
+properties([disableConcurrentBuilds()])
+
+pipeline{
+	agent {
+		label 'master'
+	}
+	triggers {pollSCM('* * * * *')}
+	oprions {
+		buildDiscarder(logRotator(numToKeepStr:'10',artifactNumToKeepStr:'10'))
+	}
+	stages {
+		stage('build'){
+			steps {
+				sh 'git clone git@github.com:MrJekso/LyskovoChat.git'
+			}
+		}
+	}
+}
