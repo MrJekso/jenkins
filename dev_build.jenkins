@@ -18,18 +18,10 @@ pipeline{
                   			def output = sh(returnStdout: true, script: 'ls | grep LyskovoChat').trim()
                   			echo "Output: '${output}'"
 					if(output == "LyskovoChat"){
-						sh('cd LyskovoChat')
-						sh('git pull origin main')
+						echo "i am find"
 					}else{
-						echo "Just do it"
-						sh 'git clone git@github.com:MrJekso/LyskovoChat.git'
+						echo "i am not find"
 					}
-					//if(Files.exists("LyskovoChat")){
-					//	sh 'cd LyskovoChat'
-					//	sh 'git pull origin main'
-					//}else{
-					//	sh 'git clone git@github.com:MrJekso/LyskovoChat.git'
-					//}
 				}
 			}
 		}
