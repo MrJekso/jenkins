@@ -16,7 +16,7 @@ pipeline{
 		stage('build'){
 			steps {
 				script{
-                  			def output = sh(returnStdout: true, script: 'echo "    hello    "').trim()
+                  			def output = sh(returnStdout: true, script: 'ls | grep toolbox').trim()
                   			echo "Output: '${output}'"
 					//if(Files.exists("LyskovoChat")){
 					//	sh 'cd LyskovoChat'
