@@ -15,7 +15,8 @@ pipeline{
 		stage('build'){
 			steps {
 				script{
-					sh('git clone git@github.com:MrJekso/LyskovoChat.git') 
+					sh('git clone git@github.com:MrJekso/LyskovoChat.git')
+					println("WORK:::::" + $BUILD_ID)
 				}
 			}
 		}
