@@ -16,10 +16,12 @@ pipeline{
 			steps {
 				script{
 					sh('git clone git@github.com:MrJekso/LyskovoChat.git') 
-                 			def output = sh(returnStdout: true, script: 'ls | grep LyskovoChat').trim()
-                  			echo "Output: '${output}'"
-					echo "ASD"
 				}
+			}
+		}
+		post{
+			always {
+				cleanWs ()
 			}
 		}
 	}
