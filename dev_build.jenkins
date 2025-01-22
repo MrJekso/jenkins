@@ -17,6 +17,7 @@ pipeline{
 				script{
 					sh('git clone git@github.com:MrJekso/LyskovoChat.git')
 					echo "NUMBER BUILD:::: ${env.BUILD_ID}"
+					echo "NUMBER NUMBER::: ${env.BUILD_NUMBER}"
 				}
 			}
 		}
