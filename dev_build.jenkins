@@ -16,7 +16,10 @@ pipeline{
 			steps {
 				script{
 					sh('git clone git@github.com:MrJekso/LyskovoChat.git')
-					sh('ls -la')
+					sh('cd LyskovoChat')
+					sh('git chekout friends')
+					sh('cd friedns')
+					sh("docker build . -t sonicsmall/friend:${BUILD_ID}.${BUILD_ID}.${BUILD_ID}")
 					echo "NUMBER BUILD:::: ${env.BUILD_ID}"
 				}
 			}
