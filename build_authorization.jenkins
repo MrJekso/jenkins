@@ -16,9 +16,9 @@ pipeline{
 			steps {
 				script{
 					sh('git clone git@github.com:MrJekso/LyskovoChat.git')
-					sh("docker build LyskovoChat/backend/friends -t sonicsmall/friend:${build_tag}")
-					sh("docker push sonicsmall/friend:${build_tag}")
-					sh('docker image rm $(docker images sonicsmall/friend -q) -f')
+					sh("docker build LyskovoChat/backend/authorization -t sonicsmall/authorization:${build_tag}")
+					sh("docker push sonicsmall/authorization:${build_tag}")
+					sh('docker image rm $(docker images sonicsmall/authorization -q) -f')
 					echo "NUMBER BUILD:::: ${env.BUILD_ID}"
 				}
 			}
